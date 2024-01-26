@@ -1,0 +1,28 @@
+{
+  "name": "crud-with-postgres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohdfaizan77/NodejsCRUDwithPostgres.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohdfaizan77/NodejsCRUDwithPostgres/issues"
+  },
+  "homepage": "https://github.com/mohdfaizan77/NodejsCRUDwithPostgres#readme",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.3",
+    "pg": "^8.11.3"
+  }
+}
