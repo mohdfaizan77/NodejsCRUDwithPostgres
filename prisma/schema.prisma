@@ -1,0 +1,75 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id    Int    @id @default(autoincrement())
+  name  String
+  email String  
+  age   Int
+  Posts Post[]
+}
+
+
+model Post {
+  id Int  @id @default(autoincrement())
+  rating Float
+  createdAt DateTime
+  updatedAt DateTime
+  author User @relation(fields: [authorId], references: [id])
+  authorId Int
+  category category @relation(fields: [categoryId], references: [categoryId])
+  categoryId Int
+}
+
+model category {
+  categoryId Int @id
+  type String
+  Posts Post[]
+}
+
+// model User {
+//   id    Int    @id @default(autoincrement())
+//   name  String
+//   email String  
+//   age   Int
+//   writtenPosts Post[] @relation("written")
+//   favouritePosts Post[] @relation("favourite")
+// }
+
+
+// model Post {
+//   id Int  @id @default(autoincrement())
+//   rating Float
+//   createdAt DateTime
+//   updatedAt DateTime
+//   author  User @relation("written",fields: [authorId], references: [id])
+//   authorId Int
+//   favourite  User @relation("favourite",fields: [favouriteId], references: [id])
+//   favouriteId Int
+// }
+
+
+// model User {
+//   id    Int    @id @default(autoincrement())
+//   name  String
+//   email String  
+//   age   Int
+//   post Post[]
+// }
+
+
+// model Post {
+//   id Int  @id @default(autoincrement())
+//   rating Float
+//   createdAt DateTime
+//   updatedAt DateTime
+//   author  User @relation(fields: [authorId], references: [id])
+//   authorId Int
+// }
